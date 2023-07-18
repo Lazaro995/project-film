@@ -1,52 +1,50 @@
-import { Button, Text, Grid } from '@nextui-org/react'
-import React, { FC, useState } from 'react'
-import { CounterProps } from './interfaces'
+import { Button, Text, Grid } from "@nextui-org/react";
+import React, { FC, useState } from "react";
+import { CounterProps } from "./interfaces";
 
 const Counter: FC<CounterProps> = ({ available, stock, imagen }) => {
-    const [value, setValue] = useState(0)
-    const addValue = () => {
-        console.log("Funciona")
-        if (value <= 0) {
-            return;
-        }
-        setValue(value - 1)
-    }
-    const removeValue = () => {
-        console.log("Recontra anda ctm")
-        setValue(value + 1)
-    }
-    const resetValue = () => {
-        console.log("Aca esta el boton reset ijo de perra")
-        setValue(0)
-    }
-    return (
-        <Grid.Container>
-            <img src={imagen} alt="" />
-            <Grid.Container gap={2} justify="center">
-                {!available && 'No ta disponible XD'}
-                <Grid xs={3}>
-                    <Button size='xs' onPress={addValue}> - </Button>
-                </Grid>
-                <Grid css={{ alignItems: 'center', justifyContent: 'center', padding: 0 }} xs={5}>
-                    <Text
-                        h1
-                        size={20}
-                        css={{
-                            textGradient: "45deg, $purple600 -20%, $pink600 100%", textAlign: "center"
-                        }}
-                        weight="bold"
-                    >
-                        {value}/{stock}
-                    </Text>
-                </Grid>
-                <Grid xs={3}>
-                    <Button size='xs' onPress={removeValue}>+</Button>
+  const [value, setValue] = useState(0);
 
-                </Grid>
-                <Button onPress={resetValue}>Reset</Button>
-            </Grid.Container>
-        </Grid.Container>
-    )
-}
+  const writeValue = (newValue: number) => {
+    setValue(value + newValue);
+  };
 
-export default Counter
+  return (
+    <Grid.Container>
+      <img src={imagen} alt="" />
+      <Grid.Container gap={2} justify="center">
+        {!available && "No ta disponible XD"}
+        <Grid xs={3}>
+          <Button size="xs" onPress={() => writeValue(+1)}>
+            {" "}
+            -{" "}
+          </Button>
+        </Grid>
+        <Grid
+          css={{ alignItems: "center", justifyContent: "center", padding: 0 }}
+          xs={5}
+        >
+          <Text
+            h1
+            size={20}
+            css={{
+              textGradient: "45deg, $purple600 -20%, $pink600 100%",
+              textAlign: "center",
+            }}
+            weight="bold"
+          >
+            {value}/{stock}
+          </Text>
+        </Grid>
+        <Grid xs={3}>
+          <Button size="xs" onPress={() => writeValue(-1)}>
+            +
+          </Button>
+        </Grid>
+        <Button onPress={() => writeValue(-value)}>Reset</Button>
+      </Grid.Container>
+    </Grid.Container>
+  );
+};
+
+export default Counter;
