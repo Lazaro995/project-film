@@ -5,23 +5,23 @@ import { CounterProps } from './interfaces'
 const Counter: FC<CounterProps> = ({ available, stock, imagen }) => {
     const [value, setValue] = useState(0)
     const addValue = () => {
-        console.log("Funciona")
+        console.log("it is work")
         if (value <= 0) {
             return;
         }
         setValue(value - 1)
     }
     const removeValue = () => {
-        console.log("Recontra anda ctm")
+        console.log("Remove")
         setValue(value + 1)
     }
     const resetValue = () => {
-        console.log("Aca esta el boton reset ijo de perra")
+        console.log("Reset")
         setValue(0)
     }
     return (
         <Grid.Container>
-            <img src={imagen} alt="" />
+            <img src={imagen} alt="this is a img" />
             <Grid.Container gap={2} justify="center">
                 {!available && 'No ta disponible XD'}
                 <Grid xs={3}>
