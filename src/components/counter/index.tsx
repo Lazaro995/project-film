@@ -2,31 +2,14 @@ import { Button, Text, Grid } from "@nextui-org/react";
 import React, { FC, useEffect, useState } from "react";
 import { CounterProps } from "./interfaces";
 
-const Counter: FC<CounterProps> = ({ available, stock, imagen, price, quantity }) => {
+const Counter: FC<CounterProps> = ({ available, stock, imagen, price}) => {
   const [value, setValue] = useState(0);
-  const [currentPrice, setCurrentPrice] = useState(0);
-  const [originalPrice, setOriginalPrice] = useState(0);
-
-  useEffect(() => {
-    setCurrentPrice(0);
-    setOriginalPrice(0);
-  }, [price, quantity]);
-
-  useEffect(() => {
-    handlePriceChange();
-  }, [currentPrice]);
 
   const writeValue = (newValue: number) => {
     setValue(value + newValue);
-    setCurrentPrice((currentPrice + newValue * price) >= 0 ? (currentPrice + newValue * price) : 0);
   };
-
-  const handlePriceChange = () => {
-  };
-
   const handleReset = () => {
     setValue(0);
-    setCurrentPrice(originalPrice);
   };
 if(stock)
 
@@ -34,7 +17,7 @@ if(stock)
     <Grid.Container>
       <img src={imagen} alt="this is a img" />
       <Text h3 size={20} weight="bold">
-        Price: ${currentPrice}
+        Price: ${value*price}
       </Text>
       <Grid.Container gap={2} justify="center">
         {!available}

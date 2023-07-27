@@ -3,5 +3,4 @@ export interface CounterProps {
     available: boolean;
     imagen: string;
     price: number;
-    quantity: number;
 }
