@@ -31,9 +31,8 @@ return (
         </Grid.Container>
     )
 }
-/* Utilizar el array carousel totals para determinar el valor
-de content. Haciendo por ejemplo: que setContent(carouselTotals[currentValue])
-Y currentValue es una nueva variable de estado
-Que se va a modificar en Galeria Anterior, Galeria siguiente
+/*
+Crear un componente nuevo: Se llamará Profile: Va a consistir en un avatar que recibe por PROP la imagen del usuario
+y al clickearse se abre y mete 4 o 5 opciones. Ejemplo ver perfil, usuario, amigos, etc. Puedo usar next ui (idealmente (=> usalo))
+Cada opcion debe mandarte a una ruta distinta (No importa el contenido)
 */
-
