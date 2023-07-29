@@ -22,5 +22,17 @@ export const CAROUSEL_CONTENT2 = [{
 {
     alt: "this is not an image",
     src: "https://upload.wikimedia.org/wikipedia/commons/9/97/Escudo_nacional_del_Perú.png"
-}
+},
 ]
+export const CAROUSEL_CONTENT3 = [{
+    alt: "This is caca",
+    src: "https://i.ytimg.com/vi/J3cu083fh6Y/maxresdefault.jpg"
+},
+{
+    alt: "No se que is useState",
+    src: "https://i.ytimg.com/vi/jrWue1evxaI/hq720.jpg"
+},
+{
+    alt: "NO SE POR QUE TENES 2",
+    src:"https://depor.com/resizer/yK6z14g3IHhzzCo22uXZXimLv3A=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/GW4ANSC7YZBP7BDBYU24O2KL6I.jpg"
+}]
