@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { ImgGrill } from "../counter/ImgGrill"
 import { Button, Grid } from "@nextui-org/react"
 import { CAROUSEL_CONTENT, CAROUSEL_CONTENT2, CAROUSEL_CONTENT3 } from "../counter/ImgGrill/constant"
