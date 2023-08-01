@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ProfileProps } from "./profileInterface";
-import { Dropdown, Button, Grid, Avatar } from "@nextui-org/react";
+import { Button, Grid, Avatar } from "@nextui-org/react";
+import {  Dropdown,  DropdownTrigger,  DropdownMenu,  DropdownSection,  DropdownItem} from "@nextui-org/react";
 
 const Profile: React.FC<ProfileProps> = ({ avatarImage }) => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ const Profile: React.FC<ProfileProps> = ({ avatarImage }) => {
 
     return (
         <Grid.Container justify="center" alignItems="center">
-            <Dropdown
+            <DropdownTrigger
                 open={menuOpen}
                 onClick={profileMenuToggle}
                 arrow
@@ -47,7 +48,7 @@ const Profile: React.FC<ProfileProps> = ({ avatarImage }) => {
                         {option.label}
                     </Button>
                 ))}
-            </Dropdown>
+            </DropdownTrigger>
         </Grid.Container>
     );
 };
