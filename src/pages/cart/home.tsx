@@ -1,7 +1,7 @@
 import { Grid, Text, Card } from '@nextui-org/react';
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { CarouselHome } from '../../components/CarouselHome';
+import { CarouselHome } from '../../components/carouselHome';
 
 function Home() {
   return (

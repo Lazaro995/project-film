@@ -1,4 +1,4 @@
-import { IContent } from "../../CarouselHome/interfaces";
+import { IContent } from "../../carouselHome/interfaces";
 export interface ContentProps{
     content: IContent[]
 }

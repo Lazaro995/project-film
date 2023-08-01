@@ -1,7 +1,7 @@
 import { Grid, Image } from "@nextui-org/react"
 import { CAROUSEL_CONTENT } from "./constant"
 import { FC } from "react"
-import { IContent } from "../../CarouselHome/interfaces"
+import { IContent } from "../../carouselHome/interfaces"
 import { ContentProps } from "./interfaces"
 export const ImgGrill:FC<ContentProps> = ({content}) => {
     return (
