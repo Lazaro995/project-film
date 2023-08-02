@@ -1,5 +1,6 @@
 import React from "react";
 import { Avatar, Dropdown, DropdownItem } from "@nextui-org/react";
+import { Link } from "react-router-dom"; // Asumiendo que estás utilizando React Router para el enrutamiento
 import { ProfileProps } from "./profileInterface";
 
 const Profile: React.FC<ProfileProps> = ({ avatarImage }) => {
@@ -11,25 +12,21 @@ const Profile: React.FC<ProfileProps> = ({ avatarImage }) => {
   ];
 
   const profileOptionClick = (href: string) => () => {
-//Poner la logica de la ruta
-    console.log("Navegacion en:", href);
+    console.log("Navegando a:", href);
+    // Aquí puedes utilizar el enrutador de React Router para navegar a la ruta "href"
   };
 
   return (
     <Dropdown
-      overlay={(
-        <>
-          {options.map((option, index) => (
-            <DropdownItem
-              key={index}
-              color="primary"
-              onClick={profileOptionClick(option.href)}
-            >
-              {option.label}
-            </DropdownItem>
-          ))}
-        </>
-      )}
+      overlay={options.map((option, index) => (
+        <DropdownItem
+          key={index}
+          color="primary"
+          onClick={profileOptionClick(option.href)}
+        >
+          <Link to={option.href}>{option.label}</Link>
+        </DropdownItem>
+      ))}
     >
       <Avatar src={avatarImage} scale={5} style={{ cursor: "pointer" }} />
     </Dropdown>
@@ -37,6 +34,8 @@ const Profile: React.FC<ProfileProps> = ({ avatarImage }) => {
 };
 
 export default Profile;
+
+
 /*
 Crear un componente nuevo: Se llamará Profile: Va a consistir en un avatar que recibe por PROP la imagen del usuario
 y al clickearse se abre y mete 4 o 5 opciones. Ejemplo ver perfil, usuario, amigos, etc. Puedo usar next ui (idealmente (=> usalo))
