@@ -1,6 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { CarouselHome } from '../../components/carouselHome';
+import { CarouselHome } from '../../components/CarouselHome/index'
 
 function Home() {
   return (
