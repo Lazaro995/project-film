@@ -1,39 +1,42 @@
-import React from "react";
-import { Avatar, Dropdown, DropdownItem } from "@nextui-org/react";
-import { Link } from "react-router-dom"; // Asumiendo que estás utilizando React Router para el enrutamiento
-import { ProfileProps } from "./profileInterface";
+import React, { useState } from 'react';
+import { Avatar, Menu, MenuItem } from '@mui/material';
+import { ProfileProps } from './profileInterface';
+const Profile: React.FC<ProfileProps> = ({ userImage }) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-const Profile: React.FC<ProfileProps> = ({ avatarImage }) => {
-  const options = [
-    { label: "Ver Perfil", href: "/profile" },
-    { label: "Usuario", href: "/user" },
-    { label: "Amigos", href: "/friends" },
-    { label: "Configuración", href: "/settings" },
-  ];
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-  const profileOptionClick = (href: string) => () => {
-    console.log("Navegando a:", href);
-    // Aquí puedes utilizar el enrutador de React Router para navegar a la ruta "href"
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
-    <Dropdown
-      overlay={options.map((option, index) => (
-        <DropdownItem
-          key={index}
-          color="primary"
-          onClick={profileOptionClick(option.href)}
-        >
-          <Link to={option.href}>{option.label}</Link>
-        </DropdownItem>
-      ))}
-    >
-      <Avatar src={avatarImage} scale={5} style={{ cursor: "pointer" }} />
-    </Dropdown>
+    <>
+      <Avatar src={userImage} onClick={handleClick} />
+      <Menu
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={() => { /* Agrega aquí la lógica para redirigir a la ruta deseada */ handleClose(); }}>
+          Ver perfil
+        </MenuItem>
+        <MenuItem onClick={() => { /* Agrega aquí la lógica para redirigir a la ruta deseada */ handleClose(); }}>
+          Usuario
+        </MenuItem>
+        <MenuItem onClick={() => { /* Agrega aquí la lógica para redirigir a la ruta deseada */ handleClose(); }}>
+          Amigos
+        </MenuItem>
+        {/* Agrega más opciones si lo deseas */}
+      </Menu>
+    </>
   );
 };
 
 export default Profile;
+
 
 
 /*

@@ -1,5 +1,5 @@
 {
-  "data": [  {
+  "data": [{
         "stock":3,
         "price":50,
         "available":true,
