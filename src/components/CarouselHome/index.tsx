@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ImgGrill } from "../counter/ImgGrill"
 import { Button, Grid } from "@nextui-org/react"
 import { CAROUSEL_CONTENT, CAROUSEL_CONTENT2, CAROUSEL_CONTENT3 } from "../counter/ImgGrill/constant"
-import { IContent } from "./interfaces"
+import { IContent } from "./interfaces";
 
 export const CarouselHome = () => {
     const carouselTotals =[CAROUSEL_CONTENT, CAROUSEL_CONTENT2, CAROUSEL_CONTENT3];
