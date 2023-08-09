@@ -19,7 +19,7 @@ const navigate_totals = NAVIGATE_CONTENT
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
-        onClose={handleClose}
+        onClose={handleClose};
       >
         <MenuItem onClick={() => { navigate_totals.map(); handleClose(); }}>
 
