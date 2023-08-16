@@ -21,7 +21,7 @@ const navigate_totals = NAVIGATE_CONTENT
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={() => { navigate_totals.map(); handleClose(); }}>
+        {/* <MenuItem onClick={() => { navigate_totals.map(); handleClose(); }}/> */}
       </Menu>
     </>
   );
