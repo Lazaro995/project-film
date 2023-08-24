@@ -2,7 +2,7 @@ import { DeliveryTypes } from "./interface";
 
 export const DEFAULT_BODY = {
   receiver: "", // text
-  package:0,// number
+  packageWeight: 0,   // number
   address: "", // text - asistido
   coordinates: {
     lat: 0, // dos inputs distintos
