@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 function User() {
     return (
-        <div><p>This is cart page.</p>
-            <Link to='/user'>GO HOME</Link>
+        <div><p>This is user page.</p>
+            <Link to='/'>GO HOME</Link>
         </div>
     )
 }

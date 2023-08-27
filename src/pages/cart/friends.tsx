@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Friends() {
     return (
         <div><p>This is cart page.</p>
-            <Link to='/friends'>GO HOME</Link>
+            <Link to='/'>GO HOME</Link>
         </div>
     )
 }

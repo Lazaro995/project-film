@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { Button } from '@nextui-org/react'
 import Counter from './components/counter'
 import { data } from './mocks/cart.json'
 import { CounterProps } from './components/counter/interfaces'
-import { Route, Link } from 'react-router-dom'
 function App() {
   const [result, setResult] = useState<CounterProps[]>([])
   useEffect(() => {
