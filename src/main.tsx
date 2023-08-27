@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import './index.css'
+import './styles/app.scss';
 import { NextUIProvider } from '@nextui-org/react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Cart from './pages/cart/cart.tsx';
